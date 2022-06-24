@@ -7,7 +7,7 @@ export const Header = () => {
     <header
       css={css`
         width: 100%;
-        background-color: grey;
+        background-color: hsla(120, 60%, 70%, 0.3);
         height: 50px;
         display: grid;
         grid-template-columns: 1fr 1fr;

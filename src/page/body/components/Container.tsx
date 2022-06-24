@@ -5,10 +5,13 @@ export const Container = ({children}:any) => {
   return (
     <div
       css={css`
-        max-width: 1400px;
-        height: 100vh;
-        margin:0 auto;
+        max-width: 1200px;
+        height: auto;
+        margin:50px auto;
         padding: 0 20px;
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+        gap:20px;
       `}
     >
     {children}
