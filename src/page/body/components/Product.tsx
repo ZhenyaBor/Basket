@@ -39,10 +39,20 @@ fetch('https://dummyjson.com/products?limit=10')
         </Typography>
       </CardContent>
     </CardActionArea>
-    <CardActions>
-      <Button size="small" color="primary">
-        Share
-      </Button>
+    <CardActions   
+      sx={{
+        fontFamily: 'Raleway',
+        justifyContent: 'space-around',
+
+      }}>
+       <p
+             css={css`
+            font-size:17px;
+            font-weight:700;
+           `}
+       >{da.price}<span>$</span></p> 
+     <button>buy</button>
+
     </CardActions>
   </Card>)
 )}</>);
