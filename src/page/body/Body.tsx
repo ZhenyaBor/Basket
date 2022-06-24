@@ -1,16 +1,11 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { Container } from "./components";
+import { Product } from "./components/Product";
+
 
 export const Body = () => {
   return (
-    <div
-      css={css`
-        width: 100%;
-        height: 100vh;
-        background-color: green;
-      `}
-    >
-      Body
-    </div>
+ <Container >
+  <Product/>
+ </Container>
   );
 };
