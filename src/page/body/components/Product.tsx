@@ -50,15 +50,7 @@ export const Product = () => {
               {da.price}
               <span>$</span>
             </p>
-            <button
-              css={css`
-                font-size: 17px;
-                font-weight: 700;
-                width: 50%;
-              `}
-            >
-              buy
-            </button>
+            <Button variant="outlined">Add to basket</Button>
           </CardActions>
         </Card>
       ))}
