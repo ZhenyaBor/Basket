@@ -22,16 +22,20 @@ export const Product = () => {
 
   return (
     <>
-      {product.map((da) => (
-        <Card key={da.id}>
+      {product.map((data) => (
+        <Card key={data.id}>
           <CardActionArea>
-            <CardMedia component="img" height="140" image={`${da.images[0]}`} />
+            <CardMedia
+              component="img"
+              height="140"
+              image={`${data.images[0]}`}
+            />
             <CardContent>
               <Typography gutterBottom variant="h6" component="div">
-                {da.title}
+                {data.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {da.description}
+                {data.description}
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -47,7 +51,7 @@ export const Product = () => {
                 font-weight: 700;
               `}
             >
-              {da.price}
+              {data.price}
               <span>$</span>
             </p>
             <Button variant="outlined">Add to basket</Button>

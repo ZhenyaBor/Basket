@@ -20,6 +20,7 @@ export const Header = () => {
       <div></div>
       <div
         css={css`
+          position: relative;
           svg {
             width: 30px;
             height: 50px;
@@ -34,11 +35,14 @@ export const Header = () => {
         `}
       >
         <BsFillBasketFill
-          onMouseEnter={() => {
+          onClick={() => {
             setOpen(true);
+            if (open) {
+              setOpen(false);
+            }
           }}
         ></BsFillBasketFill>
-        {open ? <ItemBasket open={setOpen} /> : null}
+        {open ? <ItemBasket /> : null}
       </div>
     </header>
   );
