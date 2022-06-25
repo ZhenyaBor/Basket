@@ -1,8 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useState } from "react";
 import { BsFillBasketFill } from "react-icons/bs";
+import { ItemBasket } from "./ItemBasket";
 
 export const Header = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <header
       css={css`
@@ -29,7 +33,12 @@ export const Header = () => {
           }
         `}
       >
-        <BsFillBasketFill></BsFillBasketFill>
+        <BsFillBasketFill
+          onMouseEnter={() => {
+            setOpen(true);
+          }}
+        ></BsFillBasketFill>
+        {open ? <ItemBasket open={setOpen} /> : null}
       </div>
     </header>
   );

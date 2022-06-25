@@ -23,7 +23,7 @@ export const Product = () => {
   return (
     <>
       {product.map((da) => (
-        <Card>
+        <Card key={da.id}>
           <CardActionArea>
             <CardMedia component="img" height="140" image={`${da.images[0]}`} />
             <CardContent>
