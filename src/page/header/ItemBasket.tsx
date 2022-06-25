@@ -10,7 +10,9 @@ export const ItemBasket = ({ open }: Props) => {
     <div
       onMouseOut={(e) => {
         if (e.target) {
-          open(false);
+          setTimeout(() => {
+            open(false);
+          }, 1000);
         }
       }}
       css={css`
@@ -20,7 +22,7 @@ export const ItemBasket = ({ open }: Props) => {
         padding: 10px;
       `}
     >
-      ItemBasket
+      Тестовый блок для товаров в корзине
     </div>
   );
 };
