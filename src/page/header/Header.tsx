@@ -42,7 +42,7 @@ export const Header = () => {
             }
           }}
         ></BsFillBasketFill>
-        {open ? <ItemBasket /> : null}
+        {open ?<ItemBasket /> : null}
       </div>
     </header>
   );
