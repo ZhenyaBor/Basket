@@ -15,13 +15,11 @@ export const cardSlice = createSlice({
   initialState,
   reducers: {
     setProductItem: (state, action: PayloadAction<any>) => {
-      state.products.push(action.payload);
+      return { ...state, products: [...state.products, action.payload] };
     },
   },
 });
 
-export const {  setProductItem } = cardSlice.actions;
+export const { setProductItem } = cardSlice.actions;
 
-export const selectCount = (state: RootState) => state.card.products;
-
-export default cardSlice.reducer;
+export const selectProduct = (state: RootState) => state.card.products;
