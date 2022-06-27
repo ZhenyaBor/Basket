@@ -1,24 +1,28 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { useAppSelector } from "../../redux/hooks";
 
 export const ItemBasket = () => {
+  const item = useAppSelector((state) => {
+    return state.card.products;
+  });
+  console.log(item);
   return (
     <motion.div
-    initial={{
-      y:50,
-      visibility:"hidden",
-      opacity:0
-    }}
-    animate={{
-        y: 0,
-        visibility:"visible",
-        opacity:1
+      initial={{
+        y: 50,
+        visibility: "hidden",
+        opacity: 0,
       }}
-    transition={{ 
-      duration: 1,
-
-    }}
+      animate={{
+        y: 0,
+        visibility: "visible",
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+      }}
       css={css`
         width: 300px;
         height: 400px;
@@ -28,7 +32,7 @@ export const ItemBasket = () => {
         position: absolute;
         top: 61px;
         right: 0;
-     
+
         z-index: 1;
         ::before {
           content: "";
@@ -41,7 +45,7 @@ export const ItemBasket = () => {
         }
       `}
     >
-      <h1>Блок для продуктов в корзине</h1>
+      <p></p>
     </motion.div>
   );
 };
