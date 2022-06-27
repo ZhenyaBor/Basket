@@ -10,12 +10,11 @@ import { ProductInterface } from "./interface"
 
 interface Props {
 product:ProductInterface[];
-setProduct:any;
 }
 
 
 export const Product = () => {
-  const  {product, setProduct }:Props  =  useProduct ( ) ;
+  const  {product}:Props  =  useProduct ( ) ;
   return (
     <>
       {product.map((product) => (
