@@ -1,41 +1,37 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { ProductInterface } from "./interface";
-import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { useProduct } from "./hooks/useProduct";
+import { ProductInterface } from "./interface"
+
+interface Props {
+product:ProductInterface[];
+setProduct:any;
+}
+
 
 export const Product = () => {
-  const [product, setProduct] = useState([] as ProductInterface[]);
-
-  console.log(product);
-  useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=10")
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data.products);
-      });
-  }, []);
-
+  const  {product, setProduct }:Props  =  useProduct ( ) ;
   return (
     <>
-      {product.map((data) => (
-        <Card key={data.id}>
+      {product.map((product) => (
+        <Card key={product.id}>
           <CardActionArea>
             <CardMedia
               component="img"
               height="140"
-              image={`${data.images[0]}`}
+              image={`${product.images[0]}`}
             />
             <CardContent>
               <Typography gutterBottom variant="h6" component="div">
-                {data.title}
+                {product.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {data.description}
+                {product.description}
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -51,7 +47,7 @@ export const Product = () => {
                 font-weight: 700;
               `}
             >
-              {data.price}
+              {product.price}
               <span>$</span>
             </p>
             <Button variant="outlined">Add to basket</Button>
