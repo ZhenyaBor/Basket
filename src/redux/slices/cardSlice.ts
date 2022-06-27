@@ -15,7 +15,7 @@ export const cardSlice = createSlice({
   initialState,
   reducers: {
     setProductItem: (state, action: PayloadAction<any>) => {
-      return { ...state, products: [...state.products, action.payload] };
+      state.products.push(action.payload);
     },
   },
 });
