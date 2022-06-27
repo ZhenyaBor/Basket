@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions } from "@mui/material";
 import { useProduct } from "./hooks/useProduct";
 import { ProductInterface } from "./interface"
-import {  ButtonAdd} from "./ButtonAdd"
+import {ButtonAdd} from "./ButtonAdd"
 
 interface Props {
 product:ProductInterface[];
@@ -15,7 +15,7 @@ product:ProductInterface[];
 
 
 export const Product = () => {
-  const  {product}:Props  =  useProduct ();
+  const  {product}:Props = useProduct ();
 
   return (
     <>
