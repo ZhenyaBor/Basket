@@ -8,7 +8,7 @@ export const ItemBasket = () => {
   const item = useAppSelector((state) => {
     return state.card.products;
   });
- 
+
   return (
     <motion.div
       initial={{
@@ -45,17 +45,17 @@ export const ItemBasket = () => {
         }
       `}
     >
-
       <div
-       css={css`
-       overflow:auto;
-       width: 100%;
-       height: 100%;
-     `}
+        css={css`
+          overflow: auto;
+          width: 100%;
+          height: 100%;
+        `}
       >
-       {item.map((product,index) => <ProductItemBasket key={index} product = {product}/>)}
-       
-       </div>
+        {item.map((product) => (
+          <ProductItemBasket key={product} product={product} />
+        ))}
+      </div>
     </motion.div>
   );
 };
