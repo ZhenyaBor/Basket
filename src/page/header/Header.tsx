@@ -3,9 +3,18 @@ import { css } from "@emotion/react";
 import { useState } from "react";
 import { BsFillBasketFill } from "react-icons/bs";
 import { ItemBasket } from "./ItemBasket";
+import { useAppSelector } from "../../redux/hooks";
+
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
+  const item = useAppSelector((state) => {
+    return state.card.products;
+  });
+ let count = 0;
+  if(item.length>0){
+    count = item.length
+ }
 
   return (
     <header
@@ -25,7 +34,8 @@ export const Header = () => {
             width: 30px;
             height: 50px;
             cursor: pointer;
-            position: absolute;
+            position: relative;
+            float:right;
             right: 20px;
             :hover {
               color: red;
@@ -34,6 +44,7 @@ export const Header = () => {
           }
         `}
       >
+ 
         <BsFillBasketFill
           onClick={() => {
             setOpen(true);
@@ -41,7 +52,26 @@ export const Header = () => {
               setOpen(false);
             }
           }}
-        ></BsFillBasketFill>
+        >
+
+
+        </BsFillBasketFill>
+       { count>0?  <div
+          css={css`
+          width:15px;
+          height:15px;
+          position: absolute;
+          background-color: white;
+          right: 20px;
+          top:8px;
+          border-radius:50%;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          font-size:10px;
+          font-weight: bold;
+        `}
+    ><div>{count}</div></div>:null}
         {open ?<ItemBasket /> : null}
       </div>
     </header>

@@ -2,12 +2,13 @@
 import { css } from "@emotion/react";
 import { motion } from "framer-motion";
 import { useAppSelector } from "../../redux/hooks";
+import { ProductItemBasket } from "./ProductItemBasket";
 
 export const ItemBasket = () => {
   const item = useAppSelector((state) => {
     return state.card.products;
   });
-  console.log(item);
+ 
   return (
     <motion.div
       initial={{
@@ -32,7 +33,6 @@ export const ItemBasket = () => {
         position: absolute;
         top: 61px;
         right: 0;
-
         z-index: 1;
         ::before {
           content: "";
@@ -45,7 +45,17 @@ export const ItemBasket = () => {
         }
       `}
     >
-      <p></p>
+
+      <div
+       css={css`
+       overflow:auto;
+       width: 100%;
+       height: 100%;
+     `}
+      >
+       {item.map((product,index) => <ProductItemBasket key={index} product = {product}/>)}
+       
+       </div>
     </motion.div>
   );
 };
