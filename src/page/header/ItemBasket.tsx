@@ -51,7 +51,7 @@ export const ItemBasket = () => {
           height: 100%;
         `}
       >
-        {item.map((product,index) => (
+        {item.map((product, index) => (
           <ProductItemBasket key={index} product={product} />
         ))}
       </div>

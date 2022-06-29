@@ -7,11 +7,10 @@ interface Props {
   product: ProductInterface;
 }
 
-export const ProductItemBasket = ({product}: any) => {
+export const ProductItemBasket = ({ product }: Props) => {
   const item = useAppSelector((state) => {
     return state.card.products;
   });
-
 
   return (
     <div
@@ -22,7 +21,7 @@ export const ProductItemBasket = ({product}: any) => {
         height: 100px;
         overflow: hidden;
         position: relative;
-        border:solid 1px black;
+        border: solid 1px black;
       `}
     >
       <div>
@@ -31,7 +30,7 @@ export const ProductItemBasket = ({product}: any) => {
           alt="img"
           css={css`
             width: 120px;
-            height:100%;
+            height: 100%;
           `}
         />
       </div>
