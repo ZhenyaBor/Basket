@@ -18,6 +18,8 @@ export const cardSlice = createSlice({
       const productIndex = state.products.findIndex(
         ({ id }: any) => id === action.payload.id
       );
+      
+      console.log(action.payload.price)
       const prod: any = state.products[productIndex];
 
       if (productIndex > -1) {
