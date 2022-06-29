@@ -12,6 +12,7 @@ export const ProductItemBasket = ({product}: any) => {
     return state.card.products;
   });
 
+
   return (
     <div
       css={css`
