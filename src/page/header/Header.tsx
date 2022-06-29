@@ -21,7 +21,7 @@ export const Header = () => {
     <header
       css={css`
         width: 100%;
-        background-color: hsla(120, 60%, 70%, 0.3);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(39,41,120,1) 35%, rgba(0,212,255,1) 100%);
         height: 50px;
         display: grid;
         grid-template-columns: 1fr 1fr;
