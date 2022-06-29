@@ -1,14 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { ProductInterface } from "../body/components/interface";
+import { useAppSelector } from "../../redux/hooks";
 
 interface Props {
   product: ProductInterface;
 }
 
-export const ProductItemBasket = ({
-  product: { title, images, price, count },
-}: any) => {
+export const ProductItemBasket = ({product}: any) => {
+  const item = useAppSelector((state) => {
+    return state.card.products;
+  });
+
   return (
     <div
       css={css`
@@ -18,14 +21,16 @@ export const ProductItemBasket = ({
         height: 100px;
         overflow: hidden;
         position: relative;
+        border:solid 1px black;
       `}
     >
       <div>
         <img
-          src={images[0]}
+          src={product.images[0]}
           alt="img"
           css={css`
             width: 120px;
+            height:100%;
           `}
         />
       </div>
@@ -41,7 +46,7 @@ export const ProductItemBasket = ({
             margin: 0px;
           `}
         >
-          {title}
+          {product.title}
         </p>
         <div
           css={css`
@@ -50,7 +55,7 @@ export const ProductItemBasket = ({
             text-align: center;
           `}
         >
-          {price}$<p>Всего: {count}</p>
+          {product.price}$<p>Всего: {product.count}</p>
         </div>
       </div>
     </div>
