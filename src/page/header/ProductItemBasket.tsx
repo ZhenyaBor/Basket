@@ -11,7 +11,6 @@ export const ProductItemBasket = ({ product }: Props) => {
   const item = useAppSelector((state) => {
     return state.card.products;
   });
-  const totalPrice = product.price * product.count;
 
   return (
     <div
@@ -56,7 +55,7 @@ export const ProductItemBasket = ({ product }: Props) => {
             text-align: center;
           `}
         >
-          {totalPrice}$<p>Всего: {product.count}</p>
+          {product.price * product.count}$<p>Всего: {product.count}</p>
         </div>
       </div>
     </div>
