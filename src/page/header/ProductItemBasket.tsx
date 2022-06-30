@@ -1,20 +1,25 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { ProductInterface } from "../body/components/interface";
+import { useAppDispatch } from "../../redux/hooks";
+import {setRemoveProductItem} from "../../redux/slices/cardSlice";
 
 interface Props {
   product: ProductInterface;
 }
 
 export const ProductItemBasket = ( { product  }: Props) => {
-
+  const dispatch = useAppDispatch();
+const removeItemProduct = ()=>{
+  dispatch(setRemoveProductItem(product.id))
+}
   return (
     <div
       css={css`
         display: flex;
         align-items: centr;
         margin-bottom: 10px;
-        height: 100px;
+        height: 120px;
         overflow: hidden;
         position: relative;
         border: solid 1px black;
@@ -60,6 +65,10 @@ export const ProductItemBasket = ( { product  }: Props) => {
                   `}
           >Всего: {product.count}</p>
         </div>
+        <button
+
+        onClick={removeItemProduct}
+        >удалить</button>
       </div>
     </div>
   );

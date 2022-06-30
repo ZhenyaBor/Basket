@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { count } from "console";
 import { motion } from "framer-motion";
 import { useAppSelector } from "../../redux/hooks";
 import { ProductItemBasket } from "./ProductItemBasket";
