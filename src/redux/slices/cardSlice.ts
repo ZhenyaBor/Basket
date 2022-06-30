@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
 import type { ProductInterface } from "../../page/body/components/interface";
-import { Product } from "../../page/body/components/Product";
 
 interface CardStateInterface {
   products: ProductInterface[];
@@ -24,7 +23,7 @@ export const cardSlice = createSlice({
       if (productIndex > -1) {
         state.products[productIndex] = {
           ...prod,
-          count: prod.count ? prod.count + 1 : 0,
+          count: prod.count ? prod.count + 1 : null,
         };
         return state;
       }
@@ -33,8 +32,7 @@ export const cardSlice = createSlice({
       state.products.push(action.payload);
     },
     setRemoveProductItem (state, action) {
-      state.products = state.products.filter(productItem=> productItem.id !== action.payload)
-
+      state.products= state.products.filter(productItem => productItem.id !== action.payload)
     }
     
   },

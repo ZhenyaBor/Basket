@@ -8,7 +8,7 @@ interface Props {
   product: ProductInterface;
 }
 
-export const ProductItemBasket = ( { product  }: Props) => {
+export const ProductItemBasket = ( { product }: Props) => {
   const dispatch = useAppDispatch();
 const removeItemProduct = ()=>{
   dispatch(setRemoveProductItem(product.id))
@@ -66,7 +66,10 @@ const removeItemProduct = ()=>{
           >Всего: {product.count}</p>
         </div>
         <button
-
+           css={css`
+            float:right;
+            margin-right:10px;
+         `}
         onClick={removeItemProduct}
         >удалить</button>
       </div>
