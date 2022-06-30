@@ -21,13 +21,10 @@ export const cardSlice = createSlice({
       );
       const prod = state.products[productIndex];
       if (productIndex > -1) {
-        state.products[productIndex] = {
-          ...prod,
-          count: prod.count ? prod.count + 1 : 0,
-        };
+        state.products[productIndex].count = prod.count ? prod.count + 1 : 0;
+
         return state;
       }
-
       action.payload.count = 1;
       state.products.push(action.payload);
     },

@@ -13,6 +13,7 @@ export const ProductItemBasket = ({ product }: Props) => {
   const removeItemProduct = () => {
     dispatch(setRemoveProductItem(product.id));
   };
+
   return (
     <div
       css={css`
