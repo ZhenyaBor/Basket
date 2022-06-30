@@ -1,13 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { ProductInterface } from "../body/components/interface";
-import { useAppSelector } from "../../redux/hooks";
 
 interface Props {
   product: ProductInterface;
 }
 
-export const ProductItemBasket = ({ product }: Props) => {
+export const ProductItemBasket = ( { product  }: Props) => {
 
   return (
     <div
@@ -52,7 +51,14 @@ export const ProductItemBasket = ({ product }: Props) => {
             text-align: center;
           `}
         >
-          {product.price * product.count}$<p>Всего: {product.count}</p>
+          {product.price * product.count}$
+          <p
+                    css={css`
+                    margin: 5px 0 5px 10px;
+                    font-weight: bold;
+                    text-align: center;
+                  `}
+          >Всего: {product.count}</p>
         </div>
       </div>
     </div>

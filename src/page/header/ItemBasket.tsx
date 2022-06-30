@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { count } from "console";
 import { motion } from "framer-motion";
 import { useAppSelector } from "../../redux/hooks";
 import { ProductItemBasket } from "./ProductItemBasket";
@@ -8,7 +9,7 @@ export const ItemBasket = () => {
   const item = useAppSelector((state) => {
     return state.card.products;
   });
-
+  const totalPrice = item.reduce((acc,element) => acc+=element.count*element.price,0 )
   return (
     <motion.div
       initial={{
@@ -45,6 +46,7 @@ export const ItemBasket = () => {
         }
       `}
     >
+
       <div
         css={css`
           overflow: auto;
@@ -52,9 +54,18 @@ export const ItemBasket = () => {
           height: 100%;
         `}
       >
+            <p
+              css={css`
+              font-size:16px;
+              font-weight: bold;
+              margin:0 0 10px 0;
+            `}
+      >Общая сумма товара :{totalPrice}</p>
+
         {item.map((product, index) => (
           <ProductItemBasket key={index} product={product} />
         ))}
+
       </div>
     </motion.div>
   );

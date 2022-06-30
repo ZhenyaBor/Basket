@@ -27,6 +27,7 @@ export const cardSlice = createSlice({
         };
         return state;
       }
+
       action.payload.count = 1;
       state.products.push(action.payload);
     },
