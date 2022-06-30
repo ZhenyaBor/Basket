@@ -15,7 +15,7 @@ export const cardSlice = createSlice({
   name: "card",
   initialState,
   reducers: {
-    setProductItem: (state, action: PayloadAction<any>) => {
+    setProductItem: (state, action: PayloadAction<ProductInterface>) => {
       const productIndex = state.products.findIndex(
         ({ id }: any) => id === action.payload.id
       );
@@ -31,10 +31,11 @@ export const cardSlice = createSlice({
       action.payload.count = 1;
       state.products.push(action.payload);
     },
-    setRemoveProductItem (state, action) {
-      state.products= state.products.filter(productItem => productItem.id !== action.payload)
-    }
-    
+    setRemoveProductItem(state, action) {
+      state.products = state.products.filter(
+        (productItem) => productItem.id !== action.payload
+      );
+    },
   },
 });
 
