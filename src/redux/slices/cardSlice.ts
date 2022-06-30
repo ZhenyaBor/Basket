@@ -17,13 +17,13 @@ export const cardSlice = createSlice({
   reducers: {
     setProductItem: (state, action: PayloadAction<ProductInterface>) => {
       const productIndex = state.products.findIndex(
-        ({ id }: any) => id === action.payload.id
+        ({ id }) => id === action.payload.id
       );
-      const prod: any = state.products[productIndex];
+      const prod = state.products[productIndex];
       if (productIndex > -1) {
         state.products[productIndex] = {
           ...prod,
-          count: prod.count ? prod.count + 1 : null,
+          count: prod.count ? prod.count + 1 : 0,
         };
         return state;
       }
