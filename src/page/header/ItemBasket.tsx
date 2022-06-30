@@ -8,6 +8,7 @@ export const ItemBasket = () => {
   const item = useAppSelector((state) => {
     return state.card.products;
   });
+
   return (
     <motion.div
       initial={{

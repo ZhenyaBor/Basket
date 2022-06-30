@@ -8,9 +8,6 @@ interface Props {
 }
 
 export const ProductItemBasket = ({ product }: Props) => {
-  const item = useAppSelector((state) => {
-    return state.card.products;
-  });
 
   return (
     <div
