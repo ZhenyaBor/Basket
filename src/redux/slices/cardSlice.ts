@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
 import type { ProductInterface } from "../../page/body/components/interface";
+import { count } from "console";
 
 interface CardStateInterface {
   products: ProductInterface[];
@@ -22,9 +23,10 @@ const initialState: CardStateInterface = {
           const productIndex = state.products.find(
             ({ id }) => id === action.payload.id
           );
-         
-          if (productIndex ) {
-            console.log(++state.count)
+
+          if (productIndex) {
+            console.log(state.count)
+
           }else{
             state.products.push(action.payload);
           }

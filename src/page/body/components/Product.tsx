@@ -15,7 +15,6 @@ interface Props {
 
 export const Product = () => {
   const { product }: Props = useProduct();
-
   return (
     <>
       {product.map((product) => (
