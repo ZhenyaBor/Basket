@@ -5,10 +5,13 @@ import type { ProductInterface } from "../../page/body/components/interface";
 
 interface CardStateInterface {
   products: ProductInterface[];
+  count:number
 }
+
 
 const initialState: CardStateInterface = {
   products: [],
+  count:0,
 };
 
     export const cardSlice = createSlice({
@@ -21,7 +24,7 @@ const initialState: CardStateInterface = {
           );
          
           if (productIndex ) {
-            console.log(productIndex.price)
+            console.log(++state.count )
           }else{
             state.products.push(action.payload);
           }
