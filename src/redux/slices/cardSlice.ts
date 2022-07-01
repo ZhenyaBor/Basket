@@ -24,7 +24,7 @@ const initialState: CardStateInterface = {
           );
          
           if (productIndex ) {
-            console.log(++state.count )
+            console.log(++state.count)
           }else{
             state.products.push(action.payload);
           }
