@@ -57,7 +57,7 @@ export const ProductItemBasket = ({ product }: Props) => {
             text-align: center;
           `}
         >
-          {product.price * product.count}$
+          {product.price}$
           <p
             css={css`
               margin: 5px 0 5px 10px;
