@@ -65,7 +65,7 @@ export const ProductItemBasket = ({ product }: Props) => {
               text-align: center;
             `}
           >
-            Всего: {}
+            Всего: {product.count}
           </p>
         </div>
         <button
