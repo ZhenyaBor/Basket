@@ -1,13 +1,11 @@
 FROM node
  
-WORKDIR /usr/src/app/
+WORKDIR /app
  
-COPY package.json /usr/src/app/
+COPY package.json .
+
+COPY yarn.lock .
  
-RUN yarn --silent
- 
-COPY . .
- 
-EXPOSE 3000
+RUN yarn 
 
 CMD [ "yarn", "start" ]
